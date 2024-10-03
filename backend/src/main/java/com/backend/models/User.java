@@ -1,9 +1,22 @@
 package com.backend.models;
 
-// import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Set;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-// @Entity
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
+@Table(name = "users")
 public class User {
     // Purpose: Represents the user table in the database.
     // Interactions: Interacts with UserRepository to persist and retrieve user data.
@@ -62,7 +75,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     /**
      * @return String return the firstname
