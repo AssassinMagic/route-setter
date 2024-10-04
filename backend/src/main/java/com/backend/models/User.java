@@ -20,8 +20,11 @@ import java.time.LocalDateTime;
 public class User {
     // Purpose: Represents the user table in the database.
     // Interactions: Interacts with UserRepository to persist and retrieve user data.
+
+    @Id
+    private Integer id;
     
-    // @Column(unique = true)
+    @Column(unique = true)
     private String username;
 
     private String password;
