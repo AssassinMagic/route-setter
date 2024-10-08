@@ -1,0 +1,18 @@
+# Ensure text files use LF in the repository but CRLF in the working directory on Windows
+* text=auto
+
+# Ensure Docker-specific files use LF (important for Linux containers)
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+
+# Gradle files
+*.gradle text eol=lf
+*.properties text eol=lf
+gradlew text eol=lf
+gradle-wrapper.properties text eol=lf
+
+# Markdown files (README, etc.)
+*.md text eol=lf
