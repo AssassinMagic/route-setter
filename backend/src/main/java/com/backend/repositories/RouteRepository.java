@@ -12,21 +12,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.lang.NonNull;
 import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.Optional;
 import java.util.List;
-import java.time.LocalDateTime;
-import java.time.LocalDate;
 
 @Repository
 public interface RouteRepository extends JpaRepository<Route, Long> {
     // Purpose: Interface for accessing route data in the database.
     // Interactions: Interacts with the Route entity to retrieve or store route data.
-    
-    List<Route> findByCreateBy(User user);
+
+    List<Route> findByCreatedBy(User user);
 
     List<Route> findByGrade(String grade);
 
-    List<Route> findByIsActive();
+    List<Route> findByIsActive(boolean isActive);
 
     List<Route> findByLocation(String location);
 

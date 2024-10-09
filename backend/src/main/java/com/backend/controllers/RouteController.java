@@ -2,16 +2,11 @@ package com.backend.controllers;
 
 import com.backend.models.Route;
 import com.backend.services.RouteService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Optional;
 import java.util.List;
 
@@ -23,7 +18,6 @@ public class RouteController {
     @Autowired
     private final RouteService routeService;
 
-    
     public RouteController(RouteService routeService) {
         this.routeService = routeService;
     }
@@ -44,5 +38,25 @@ public class RouteController {
     @GetMapping
     public List<Route> getAllRoutes() {
         return routeService.getAllRoutes();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Route> updateRoute(@PathVariable Long id, @RequestBody Route updatedRoute) {
+        try {
+            Route route = routeService.updateRoute(id, updatedRoute);
+            return ResponseEntity.ok(route);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteRoute(@PathVariable Long id) {
+        try {
+            routeService.deleteRoute(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

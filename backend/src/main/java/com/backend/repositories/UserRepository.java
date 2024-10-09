@@ -8,10 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 import java.util.List;
 import java.time.LocalDateTime;
-import java.time.LocalDate;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>{
+public interface UserRepository extends JpaRepository<User, Long> {
     // Purpose: Interface for accessing user data in the database.
     // Interactions: Interacts with the User entity and the database to retrieve or save user data.
 
@@ -23,12 +22,13 @@ public interface UserRepository extends JpaRepository<User, Long>{
 
     // Custom query to find users registered after a certain date
     @Query("SELECT u FROM User u WHERE u.createdAt > :date")
-    List<User> findUsersRegisteredAfter(LocalDateTime date);
+    List<User> findUsersRegisteredAfter(@Param("date") LocalDateTime date);
 
     // Custom query to find users by partial match in username
     @Query("SELECT u FROM User u WHERE u.username LIKE %:username%")
     List<User> findByUsernameContaining(@Param("username") String username);
 
-
-
+    // Custom query to find users by partial match in email
+    @Query("SELECT u FROM User u WHERE u.email LIKE %:email%")
+    List<User> findByEmailContaining(@Param("email") String email);
 }
