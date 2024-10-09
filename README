@@ -1,0 +1,40 @@
+# Route Setter
+
+## Overview
+Route Setter is a project designed to help climbers create and manage climbing routes. It provides tools for setting routes, tracking progress, and sharing with the climbing community.
+
+## Features
+- Create and edit climbing routes
+- Track climbing progress
+- Share routes with others
+- User-friendly interface
+
+## Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/assassinmagic/route-setter.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd route-setter
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+
+## Usage
+1. Start the application:
+    ```sh
+    npm start
+    ```
+2. Open your browser and navigate to `http://localhost:8080`.
+
+## Contributing
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) for more information.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any inquiries, please contact [assassinmagicyt@gmail.com](mailto:assassinmagicyt@gmail.com).

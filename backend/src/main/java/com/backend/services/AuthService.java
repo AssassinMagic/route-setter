@@ -46,8 +46,8 @@ public class AuthService {
                 new UsernamePasswordAuthenticationToken(username, password)
             );
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-            return jwtUtil.generateToken(userDetails);
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            return jwtUtil.generateToken(userDetails.getUsername()); // Extract username and pass it to generateToken
         } catch (Exception e) {
             logger.error("Authentication failed for user: {}", username, e);
             throw new RuntimeException("Invalid credentials");
