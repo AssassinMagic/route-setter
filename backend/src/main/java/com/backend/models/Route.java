@@ -32,7 +32,7 @@ public class Route {
     private User createdBy;
 
     private LocalDateTime createdAt;
-    private Boolean isActive = true;
+    private boolean isActive = true;
     private String grade;
     private String gradeConsensus;
     private String routeType; // boulder, lead
@@ -42,11 +42,11 @@ public class Route {
     @ElementCollection
     private List<String> tags = new ArrayList<>();
 
-    private Integer likesCount = 0;
-    private Integer dislikesCount = 0;
-    private Integer commentCount = 0;
-    private Integer favoritesCount = 0;
-    private Integer viewsCount = 0;
+    private int likesCount = 0;
+    private int dislikesCount = 0;
+    private int commentCount = 0;
+    private int favoritesCount = 0;
+    private int viewsCount = 0;
 
     @ElementCollection
     private List<Long> likesList = new ArrayList<>();

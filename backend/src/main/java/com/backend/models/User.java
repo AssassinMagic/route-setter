@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
@@ -37,12 +37,12 @@ public class User {
     private String firstname;
     private String lastname;
     private LocalDateTime createdAt;
-    private Boolean isEmailVerified = false;
+    private boolean isEmailVerified = false;
     private String verificationToken;
 
     private String profilePictureUrl;
 
-    private Integer score = 0;
+    private int score = 0;
 
     @ElementCollection
     @CollectionTable(name = "favorite_routes", joinColumns = @JoinColumn(name = "user_id"))
