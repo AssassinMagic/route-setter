@@ -33,15 +33,12 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    @JsonIgnore
     private String password;
 
     private String firstname;
     private String lastname;
     private LocalDateTime createdAt;
     private Boolean isEmailVerified = false;
-
-    @JsonIgnore
     private String verificationToken;
 
     private String profilePictureUrl;
