@@ -1,6 +1,7 @@
 package com.backend.models;
 
 import jakarta.persistence.*;
+import jakarta.persistence.PrePersist;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,12 +33,15 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     private String firstname;
     private String lastname;
     private LocalDateTime createdAt;
     private Boolean isEmailVerified = false;
+
+    @JsonIgnore
     private String verificationToken;
 
     private String profilePictureUrl;
