@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import jakarta.validation.Valid; // Updated import
+import jakarta.validation.Valid;
 import java.util.Optional;
 import java.util.List;
 
@@ -17,10 +17,7 @@ public class UserController {
     // Purpose: Handles user-related operations, such as fetching user details.
     // Interactions: Calls UserService to retrieve user data from the database.
 
-    @Autowired 
     private final UserService userService;
-
-    @Autowired
     private final AuthService authService;
 
     public UserController(UserService userService, AuthService authService) {

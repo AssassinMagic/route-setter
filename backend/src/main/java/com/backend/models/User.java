@@ -47,27 +47,27 @@ public class User {
 
     @ElementCollection
     @CollectionTable(name = "favorite_routes", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "route_id")
+    @Column(name = "favorite_route_id")
     private List<Long> favoriteRoutes = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "uploaded_routes", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "route_id")
+    @Column(name = "uploaded_route_id")
     private List<Long> uploadedRoutes = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "liked_routes", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "route_id")
+    @Column(name = "liked_route_id")
     private List<Long> likedRoutes = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "disliked_routes", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "route_id")
+    @Column(name = "disliked_route_id")
     private List<Long> dislikedRoutes = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "commented_routes", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "route_id")
+    @Column(name = "commented_route_id")
     private List<Long> commentedRoutes = new ArrayList<>();
 
     // Map collections with @ElementCollection
